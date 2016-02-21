@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Empresa>
+    <nombreEmpresa>Mangosta</nombreEmpresa>
+    <idEmpresa>123</idEmpresa>
+    <direccion>Calle Marmota que bota</direccion>
+    <numEmpleados>3</numEmpleados>
+    <empleados>
+        <activo>false</activo>
+        <fechaAlta>1998-03-12T00:00:00+01:00</fechaAlta>
+        <id>4958220</id>
+        <nombre>Carlos</nombre>
+        <numeroEmpl>2822</numeroEmpl>
+        <titulo>Capataz</titulo>
+    </empleados>
+    <empleados>
+        <activo>true</activo>
+        <fechaAlta>2004-10-01T00:00:00+02:00</fechaAlta>
+        <id>14594210</id>
+        <nombre>Marco</nombre>
+        <numeroEmpl>2820</numeroEmpl>
+        <titulo>Jefe</titulo>
+    </empleados>
+    <empleados>
+        <activo>true</activo>
+        <fechaAlta>2006-12-02T00:00:00+01:00</fechaAlta>
+        <id>79739759</id>
+        <nombre>Maria</nombre>
+        <numeroEmpl>2860</numeroEmpl>
+        <titulo>Secret</titulo>
+    </empleados>
+    <empleados>
+        <activo>true</activo>
+        <fechaAlta>2011-11-05T00:00:00+01:00</fechaAlta>
+        <id>90047360</id>
+        <nombre>Tamara</nombre>
+        <numeroEmpl>2830</numeroEmpl>
+        <titulo>Capataz</titulo>
+    </empleados>
+</Empresa>

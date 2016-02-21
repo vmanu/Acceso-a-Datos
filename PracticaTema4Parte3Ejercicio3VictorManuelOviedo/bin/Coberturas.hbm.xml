@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 30-ene-2016 12:37:11 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="model.Coberturas" table="COBERTURAS">
+        <id name="id_cobertura" type="int">
+            <column name="ID_COBERTURA" />
+            <generator class="assigned" />
+        </id>
+        <property name="oftalmologia" type="boolean">
+            <column name="OFTALMOLOGIA" />
+        </property>
+        <property name="dental" type="boolean">
+            <column name="DENTAL" />
+        </property>
+        <property name="fecundacionInVitro" type="boolean">
+            <column name="FECUNDACION_IN_VITRO" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,20 @@
+<aula>
+  <alumno>
+    <nombre>Jesus</nombre>
+    <apellidos>Gil</apellidos>
+    <anoNacimiento>1988</anoNacimiento>
+    <direccion>
+      <calle>Mangante</calle>
+      <numero>74</numero>
+    </direccion>
+  </alumno>
+  <alumno>
+    <nombre>Francisco</nombre>
+    <apellidos>Correa</apellidos>
+    <anoNacimiento>1976</anoNacimiento>
+    <direccion>
+      <calle>Corruptos</calle>
+      <numero>12</numero>
+    </direccion>
+  </alumno>
+</aula>

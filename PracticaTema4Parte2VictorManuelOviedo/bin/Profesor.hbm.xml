@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 21-ene-2016 8:48:17 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.hibernate.modelo.Profesor" table="PROFESOR">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="identity"/>
+        </id>
+        <property name="nombre" type="java.lang.String">
+            <column name="NOMBRE" />
+        </property>
+        <property name="ape1" type="java.lang.String">
+            <column name="APE1" />
+        </property>
+        <property name="ape2" type="java.lang.String">
+            <column name="APE2" />
+        </property>
+        <!-- <one-to-one name="direccion" class="com.hibernate.modelo.Direccion" cascade="all" constrained="true"/> -->   <!-- ejercicio 1 y 2 -->
+        <many-to-one name="direccion" column="direccion_id" cascade="all" not-null="true"></many-to-one>      <!-- ejercicio 3 en adelante-->
+        <many-to-one name="modulo" column="modulo_id" cascade="all" not-null="true"></many-to-one>
+        <!-- <bag name="correos" table="Correo" cascade="all">
+            <key column="profesor_id" not-null="true"></key>
+            <one-to-many class="com.hibernate.modelo.Correo"/>
+        </bag> --> <!-- Hasta ejercicio 8 -->
+        <list name="correos" table="Correo" cascade="all">
+            <key column="profesor_id" not-null="true"></key>
+            <list-index column="correos_index"></list-index>
+            <one-to-many class="com.hibernate.modelo.Correo"/>
+        </list><!-- Ejercicio 8 -->
+        
+    </class>
+</hibernate-mapping>

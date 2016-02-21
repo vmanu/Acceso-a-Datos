@@ -1,0 +1,11 @@
+hola, este es el enunciado del ejercicio:
+Desarrolla una clase java con método main
+para que solicite un nombre de archivo y una
+posición de línea al usuario y utilizando
+RandomAccessFile acceda a esa línea en el
+archivo y la muestre por pantalla. Si el
+archivo no existe, informa al usuario y
+finaliza el programa. Si el archivo está
+vacío informa al usuario y finaliza el
+programa. Si el número de línea no existe
+informa al usuario y finaliza.

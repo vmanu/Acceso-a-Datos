@@ -1,0 +1,19 @@
+<proveedor cif="12" empresa="Marcilla">
+  <calle>key</calle>
+  <ciudad>Londres</ciudad>
+  <pais>Reino Unido</pais>
+  <cp>26652</cp>
+  <esNacional>Importacion</esNacional>
+  <cafes>
+    <cafe>
+      <nombre>MN</nombre>
+      <precio>1.2</precio>
+      <ventas>123</ventas>
+    </cafe>
+    <cafe>
+      <nombre>JKR</nombre>
+      <precio>4.23</precio>
+      <ventas>456</ventas>
+    </cafe>
+  </cafes>
+</proveedor>

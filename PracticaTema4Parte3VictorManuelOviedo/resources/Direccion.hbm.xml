@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 29-may-2015 12:05:24 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="model.Direccion" table="DIRECCION">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+         <!-- una asoc. 1-N de clave foránea se modela como many-to-one con unique a false (o no ponerlo) -->
+		<!-- Muy importante poner cascade=all sino nos da error de cargo nulo al guardar el empleado -->
+		<many-to-one name="municipio" column="MUNICIPIO_ID"  cascade="all"	not-null="true" />
+        <property name="calle" type="java.lang.String">
+            <column name="CALLE" />
+        </property>
+        <property name="numero" type="int">
+            <column name="NUMERO" />
+        </property>       
+        <property name="provincia" type="java.lang.String">
+            <column name="PROVINCIA" />
+        </property>
+    </class> 
+    <query name="ejercicio2.7">
+        <![CDATA[SELECT AVG(d.numero), MAX(d.numero), MIN(d.numero) FROM Direccion d]]>
+    </query>
+</hibernate-mapping>

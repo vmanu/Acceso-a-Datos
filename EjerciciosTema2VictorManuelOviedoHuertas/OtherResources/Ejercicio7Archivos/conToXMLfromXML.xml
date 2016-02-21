@@ -1,0 +1,14 @@
+<proveedor cif="456" empresa="Marcilla">
+  <calle>Pontevedra 5</calle>
+  <ciudad>Ourense</ciudad>
+  <pais>España</pais>
+  <cp>45669</cp>
+  <esNacional>Nacional</esNacional>
+  <cafes>
+    <cafe>
+      <nombre>Normal</nombre>
+      <precio>1.15</precio>
+      <ventas>789</ventas>
+    </cafe>
+  </cafes>
+</proveedor>

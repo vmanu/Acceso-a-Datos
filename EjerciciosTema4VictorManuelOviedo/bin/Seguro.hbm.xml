@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-dic-2015 21:13:16 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.hibernate.modelo.Seguro" table="SEGURO">
+        <id name="idSeguro" type="int">
+            <column name="IDSEGURO" />
+            <generator class="identity" />
+        </id>
+        <property name="nif" type="java.lang.String">
+            <column name="NIF" />
+        </property>
+        <property name="nombre" type="java.lang.String">
+            <column name="NOMBRE" />
+        </property>
+        <property name="ape1" type="java.lang.String">
+            <column name="APE1" />
+        </property>
+        <property name="ape2" type="java.lang.String">
+            <column name="APE2" />
+        </property>
+        <property name="edad" type="int">
+            <column name="EDAD" />
+        </property>
+        <property name="numHijos" type="int">
+            <column name="NUMHIJOS" />
+        </property>
+        <property name="sexo">
+            <column name="SEXO" />
+            <type name="org.hibernate.type.EnumType">
+                <param name="enumClass">com.hibernate.modelo.Seguro$TipoSexo</param>
+            </type>
+        </property>
+        <property name="tipo" length="30">
+            <column name="TIPOSEGURO" />
+            <type name="org.hibernate.type.EnumType">
+                <param name="type">12</param>
+                <param name="enumClass">com.hibernate.modelo.Seguro$TipoSeguro</param>
+            </type>
+        </property>
+        <property name="casado" type="yes_no">
+            <column name="CASADO" />
+        </property>
+        <property name="fechaCreacion" type="java.util.Date" >
+            <column name="FECHACREACION" />
+        </property>
+        <property name="mayorEdad" type="boolean" formula="edad>=18"/>
+        <property name="fechaNacimiento" type="date" >
+            <column name="FECHANACIMIENTO" />
+        </property>
+        <property name="horaNacimiento" type="time" >
+            <column name="HORANACIMIENTO" />
+        </property>
+        <property name="claves" type="char[]" >
+            <column name="CLAVES" />
+        </property>
+        <property name="comentarios" type="java.lang.String">
+            <column name="COMENTARIOS" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,6 @@
+El alumno se llama:Pepe Martinez	Nació en el año:1990	Vive en la calle:Mejico 3
+El alumno se llama:Pedro Calvario	Nació en el año:1989	Vive en la calle:Chile 42
+El alumno se llama:Hector Contreras	Nació en el año:1991	Vive en la calle:Mendoza 5
+El alumno se llama:Carlos Cadete	Nació en el año:1988	Vive en la calle:Principes de Espana 6
+El alumno se llama:Pablo Piqueras	Nació en el año:1992	Vive en la calle:Uruguay 10
+El alumno se llama:Zahir Zapata	Nació en el año:1989	Vive en la calle:Argentina 20

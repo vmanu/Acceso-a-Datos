@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 30-ene-2016 12:37:11 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="model.Seguro" table="SEGURO">
+        <id name="idSeguro" type="int">
+            <column name="ID_SEGURO" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="nif" class="model.NIF" unique="true" cascade="all"/>
+        <property name="nombre" type="java.lang.String">
+            <column name="NOMBRE" />
+        </property>
+        <property name="ape1" type="java.lang.String">
+            <column name="APE1" />
+        </property>
+        <property name="ape2" type="java.lang.String">
+            <column name="APE2" />
+        </property>
+        <property name="edad" type="int">
+            <column name="EDAD" />
+        </property>
+        <property name="sexo">
+            <column name="SEXO" />
+            <type name="org.hibernate.type.EnumType">
+                <param name="type">4</param><!-- 12 es cadena, 4 es ordinal -->
+                <param name="enumClass">model.Sexo</param>
+            </type>
+        </property>
+        <property name="casado" type="boolean">
+            <column name="CASADO" />
+        </property>
+        <property name="numHijos" type="int">
+            <column name="HIJOS" />
+        </property>
+        <property name="embarazada" type="boolean">
+            <column name="EMBARAZADA" />
+        </property>
+        <many-to-one name="cobertura" class="model.Coberturas" unique="true" cascade="all"/>
+        <many-to-one name="enfermedades" class="model.Enfermedades" unique="true" cascade="all"/>
+        <property name="fechaCreacion" type="java.util.Date">
+            <column name="FECHA_CREACION" />
+        </property>
+        <bag name="asistenciasMedicas" table="ASISTENCIA_MEDICA" cascade="all" >
+            <key column="SEGURO" not-null="true"></key>
+        	<one-to-many class="model.AsistenciaMedica"/>
+        </bag>
+    </class>
+    <query name="ejercicio3.1">
+        <![CDATA[SELECT s FROM Seguro s]]>
+    </query>
+    <query name="ejercicio3.2">
+        <![CDATA[SELECT s.nif.nif, s.nombre FROM Seguro s]]>
+    </query>
+    <query name="ejercicio3.3">
+        <![CDATA[SELECT s.nif.nif FROM Seguro s WHERE s.nombre= :nombre AND s.ape1= :ape1 AND s.ape2= :ape2]]>
+    </query>
+    <query name="ejercicio3.8">
+        <![CDATA[SELECT COUNT(s.idSeguro) FROM Seguro s]]>
+    </query>
+    <query name="ejercicio3.9">
+        <![CDATA[SELECT s FROM Seguro s]]>
+    </query>
+    <query name="ejercicio3.10">
+        <![CDATA[SELECT s.enfermedades.nombreAlergia FROM Seguro s]]>
+    </query>
+</hibernate-mapping>

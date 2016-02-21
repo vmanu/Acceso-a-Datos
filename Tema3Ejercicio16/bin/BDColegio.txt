@@ -1,0 +1,135 @@
+drop database if exists colegio;
+
+create database colegio;
+
+use colegio; 
+
+drop table if exists alumno;
+
+create table alumno (NUM_EXPEDIENTE integer NOT NULL, NOMBRE varchar(40) NOT NULL, APELLIDOS varchar(40) NOT NULL, GRADO integer NOT NULL, CURSO varchar(40) NOT NULL, PRIMARY KEY (NUM_EXPEDIENTE));
+
+drop table if exists ASIGNATURA;
+
+create table ASIGNATURA (ID_ASIGNATURA integer NOT NULL, NOMBRE_ASIGNATURA varchar (40) NOT NULL, TIPO varchar (11) NOT NULL CHECK(TIPO='Troncal' OR TIPO='Obligatoria' OR TIPO='Optativa'), CREDITOS integer NOT NULL, PRIMARY KEY (ID_ASIGNATURA));
+
+drop table if exists ALUMNO_ASIGNATURA;
+
+create table ALUMNO_ASIGNATURA (ID_ASIGNATURA integer NOT NULL, NUM_EXPEDIENTE integer (40) NOT NULL, APROBADO boolean NOT NULL, PRIMARY KEY (ID_ASIGNATURA,NUM_EXPEDIENTE), FOREIGN KEY (ID_ASIGNATURA) REFERENCES ASIGNATURA (ID_ASIGNATURA), FOREIGN KEY (NUM_EXPEDIENTE) REFERENCES ALUMNO (NUM_EXPEDIENTE));
+
+insert into alumno values(1, 'Carlos', 'Martinez', '1', 'DAM');
+insert into alumno values(2, 'Marcos', 'Romo', '2', 'DAM');
+insert into alumno values(3, 'Juan Carlos', 'Perez', '1', 'SMR');
+insert into alumno values(4, 'Jose Miguel', 'Vazquez', '2', 'DAM');
+insert into alumno values(5, 'Patricia', 'Garcia', '1', 'SMR');
+insert into alumno values(6, 'Francisco', 'Gutierrez', '2', 'DAM');
+insert into alumno values(7, 'Pablo', 'Picaso', '1', 'SMR');
+insert into alumno values(8, 'Ivan', 'Pellisso', '2', 'SMR');
+insert into alumno values(9, 'Diego', 'Cortecero', '1', 'DAM');
+insert into alumno values(11, 'Fidel', 'Castro', '2', 'SMR');
+insert into alumno values(14, 'Juan', 'Rojas', '1', 'DAM');
+insert into alumno values(12, 'Manuel', 'Callejas', '1', 'DAM');
+insert into alumno values(15, 'Gerardo', 'Alonso', '2', 'DAM');
+insert into alumno values(10, 'Valeriano', 'Heredia', '2', 'DAM');
+insert into alumno values(13, 'Josep', 'Porco', '1', 'DAM');
+insert into alumno values(20, 'Elena', 'Puertas', '2', 'SMR');
+insert into alumno values(17, 'Tamara', 'Bronson', '1', 'SMR');
+insert into alumno values(19, 'Win', 'Chee', '2', 'DAM');
+insert into alumno values(16, 'Joshiba', 'Mahon', '1', 'SMR');
+insert into alumno values(18, 'Mohamed', 'Al Sabar', '1', 'SMR');
+
+insert into asignatura values('1', 'Programacion', 'Obligatoria', 7);
+insert into asignatura values('2', 'PSP', 'Troncal', 9);
+insert into asignatura values('3', 'SGE', 'Optativa', 2);
+insert into asignatura values('4', 'Desarrollo Interfaces', 'Optativa', 4);
+insert into asignatura values('5', 'Ingles', 'Optativa', 2);
+insert into asignatura values('6', 'Acceso Datos', 'Troncal', 8);
+
+insert into alumno_asignatura values (1,1,true);
+insert into alumno_asignatura values (1,2,true);
+insert into alumno_asignatura values (1,4,true);
+insert into alumno_asignatura values (1,6,true);
+insert into alumno_asignatura values (1,9,true);
+insert into alumno_asignatura values (1,14,true);
+insert into alumno_asignatura values (1,12,false);
+insert into alumno_asignatura values (1,15,true);
+insert into alumno_asignatura values (1,10,true);
+insert into alumno_asignatura values (1,13,false);
+insert into alumno_asignatura values (1,19,true);
+
+insert into alumno_asignatura values (2,1,false);
+insert into alumno_asignatura values (2,2,true);
+insert into alumno_asignatura values (2,4,true);
+insert into alumno_asignatura values (2,6,true);
+insert into alumno_asignatura values (2,9,false);
+insert into alumno_asignatura values (2,14,false);
+insert into alumno_asignatura values (2,12,false);
+insert into alumno_asignatura values (2,15,true);
+insert into alumno_asignatura values (2,10,true);
+insert into alumno_asignatura values (2,13,true);
+insert into alumno_asignatura values (2,19,true);
+
+insert into alumno_asignatura values (4,1,false);
+insert into alumno_asignatura values (4,2,true);
+insert into alumno_asignatura values (4,4,true);
+insert into alumno_asignatura values (4,6,true);
+insert into alumno_asignatura values (4,9,false);
+insert into alumno_asignatura values (4,14,false);
+insert into alumno_asignatura values (4,12,false);
+insert into alumno_asignatura values (4,15,true);
+insert into alumno_asignatura values (4,10,true);
+insert into alumno_asignatura values (4,13,false);
+insert into alumno_asignatura values (4,19,true);
+
+insert into alumno_asignatura values (6,1,false);
+insert into alumno_asignatura values (6,2,false);
+insert into alumno_asignatura values (6,4,false);
+insert into alumno_asignatura values (6,6,false);
+insert into alumno_asignatura values (6,9,false);
+insert into alumno_asignatura values (6,14,false);
+insert into alumno_asignatura values (6,12,false);
+insert into alumno_asignatura values (6,15,false);
+insert into alumno_asignatura values (6,10,true);
+insert into alumno_asignatura values (6,13,false);
+insert into alumno_asignatura values (6,19,false);
+
+insert into alumno_asignatura values (3,1,true);
+insert into alumno_asignatura values (3,2,true);
+insert into alumno_asignatura values (3,4,true);
+insert into alumno_asignatura values (3,6,true);
+insert into alumno_asignatura values (3,9,true);
+insert into alumno_asignatura values (3,14,false);
+insert into alumno_asignatura values (3,12,true);
+insert into alumno_asignatura values (3,15,true);
+insert into alumno_asignatura values (3,10,true);
+insert into alumno_asignatura values (3,13,true);
+insert into alumno_asignatura values (3,19,false);
+insert into alumno_asignatura values (3,3,true);
+insert into alumno_asignatura values (3,5,true);
+insert into alumno_asignatura values (3,7,false);
+insert into alumno_asignatura values (3,8,false);
+insert into alumno_asignatura values (3,11,true);
+insert into alumno_asignatura values (3,16,false);
+insert into alumno_asignatura values (3,17,true);
+insert into alumno_asignatura values (3,18,false);
+insert into alumno_asignatura values (3,20,true);
+
+insert into alumno_asignatura values (5,1,true);
+insert into alumno_asignatura values (5,2,true);
+insert into alumno_asignatura values (5,4,true);
+insert into alumno_asignatura values (5,6,true);
+insert into alumno_asignatura values (5,9,true);
+insert into alumno_asignatura values (5,14,false);
+insert into alumno_asignatura values (5,12,true);
+insert into alumno_asignatura values (5,15,true);
+insert into alumno_asignatura values (5,10,true);
+insert into alumno_asignatura values (5,13,true);
+insert into alumno_asignatura values (5,19,false);
+insert into alumno_asignatura values (5,3,true);
+insert into alumno_asignatura values (5,5,true);
+insert into alumno_asignatura values (5,7,false);
+insert into alumno_asignatura values (5,8,false);
+insert into alumno_asignatura values (5,11,true);
+insert into alumno_asignatura values (5,16,false);
+insert into alumno_asignatura values (5,17,true);
+insert into alumno_asignatura values (5,18,false);
+insert into alumno_asignatura values (5,20,true);

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 30-ene-2016 12:37:11 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="model.Enfermedades" table="ENFERMEDADES">
+        <id name="id_enfermedades" type="int">
+            <column name="ID_ENFERMEDAD" />
+            <generator class="assigned" />
+        </id>
+        <property name="corazon" type="boolean">
+            <column name="CORAZON" />
+        </property>
+        <property name="estomacal" type="boolean">
+            <column name="ESTOMACAL" />
+        </property>
+        <property name="rinyones" type="boolean">
+            <column name="RINYONES" />
+        </property>
+        <property name="alergia" type="boolean">
+            <column name="ALERGIA" />
+        </property>
+        <property name="nombreAlergia" type="java.lang.String">
+            <column name="NOMBRE_ALERGIA" />
+        </property>
+    </class>
+</hibernate-mapping>

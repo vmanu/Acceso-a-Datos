@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Alumno7>
+    <item>
+        <nombre>Pepe</nombre>
+        <apellidos>Martinez</apellidos>
+        <annoNacimiento>1990</annoNacimiento>
+        <direccion>Mejico</direccion>
+    </item>
+    <item>
+        <nombre>Pedro</nombre>
+        <apellidos>Calvario</apellidos>
+        <annoNacimiento>1989</annoNacimiento>
+        <direccion>Chile</direccion>
+    </item>
+    <item>
+        <nombre>Hector</nombre>
+        <apellidos>Contreras</apellidos>
+        <annoNacimiento>1991</annoNacimiento>
+        <direccion>Mendoza</direccion>
+    </item>
+</Alumno7>

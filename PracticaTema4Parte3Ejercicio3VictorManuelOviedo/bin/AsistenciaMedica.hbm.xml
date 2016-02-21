@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 30-ene-2016 12:37:11 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="model.AsistenciaMedica" table="ASISTENCIA_MEDICA">
+        <id name="idAsistenciaMedica" type="int">
+            <column name="ID_ASISTENCIA" />
+            <generator class="assigned" />
+        </id>
+        <property name="breveDescripcion" type="java.lang.String">
+            <column name="DESCRIPCION" />
+        </property>
+        <property name="lugar" type="java.lang.String">
+            <column name="LUGAR" />
+        </property>
+        <property name="explicacion" type="java.lang.String">
+            <column name="EXPLICACION" />
+        </property>
+        <property name="tipoAsistencia">
+            <column name="TIPO_ASISTENCIA" />
+            <type name="org.hibernate.type.EnumType">
+                <param name="type">12</param>
+                <param name="enumClass">model.TipoAsistencia</param>
+            </type>
+        </property>
+        <property name="fecha" type="java.util.Date">
+            <column name="FECHA" />
+        </property>
+        <property name="hora" type="java.util.Date">
+            <column name="HORA" />
+        </property>
+        <property name="importe" type="java.math.BigDecimal">
+            <column name="IMPORTE" />
+        </property>
+    </class>
+    <query name="ejercicio3.4">
+        <![CDATA[SELECT a.id FROM AsistenciaMedica a WHERE a.importe>= :dec1]]>
+    </query>
+    <query name="ejercicio3.5">
+        <![CDATA[SELECT a.id FROM AsistenciaMedica a WHERE a.importe>= :dec1 AND a.importe <= :dec2]]>
+    </query>
+    <query name="ejercicio3.6">
+        <![CDATA[SELECT SUM(a.importe) FROM AsistenciaMedica a]]>
+    </query>
+    <query name="ejercicio3.7">
+        <![CDATA[SELECT AVG(a.importe) FROM AsistenciaMedica a]]>
+    </query>
+</hibernate-mapping>

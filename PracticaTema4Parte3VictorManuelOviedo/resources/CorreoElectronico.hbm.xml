@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 29-may-2015 13:58:48 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="model.CorreoElectronico" table="CORREO">
+        <id name="id" type="int">
+            <column name="ID"  unique="true" not-null="true"/>
+            <generator class="identity" />
+        </id>
+        <property name="direccion" type="java.lang.String">
+            <column name="DIRECCION" />
+        </property>
+        <property name="proveedor" type="java.lang.String">
+            <column name="PROVEEDOR" />
+        </property>
+    </class>
+    <query name="ejercicio2.1">
+        <![CDATA[SELECT c.direccion, c.proveedor FROM CorreoElectronico c]]>
+    </query>
+    <query name="ejercicio2.2">
+        <![CDATA[SELECT c.proveedor,COUNT(c.direccion) FROM CorreoElectronico c Group by c.proveedor]]>
+    </query>
+    <query name="ejercicio2.3">
+        <![CDATA[SELECT c.proveedor,COUNT(c.direccion) FROM CorreoElectronico c WHERE c.proveedor IN ('yahoo','gmail') Group by c.proveedor]]>
+    </query>
+</hibernate-mapping>

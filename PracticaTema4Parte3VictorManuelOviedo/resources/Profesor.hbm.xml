@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 29-may-2015 12:05:24 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="model.Profesor" table="PROFESOR">
+        	<id name="id" type="int">
+			<column name="ID" />
+			<generator class="identity" />
+		</id>
+         <!-- una asoc. 1-1 de clave foránea se modela como many-to-one con unique a true -->
+		<!-- Muy importante poner cascade=all sino nos da error de cargo nulo al guardar el empleado -->
+		<many-to-one name="direccion" column="DIRECCION_ID" unique="true" cascade="all"	not-null="true" />
+		<!-- Muy importante poner cascade=all sino nos da error de cargo nulo al guardar el empleado -->
+		<many-to-one name="nombre" column="NOMBRE_ID" unique="true" cascade="all"	not-null="true" />
+        <!-- Relación N-1 -->
+        <bag name="correos" table="CORREO" cascade="all" >
+            <key column="PROFESOR_ID" not-null="true"></key>
+            <one-to-many class="model.CorreoElectronico"/>
+        </bag>
+    </class> 
+    <query name="ejercicio1NavegarPropiedad">
+        <![CDATA[SELECT p.nombre.ape1 FROM Profesor p WHERE id=2]]>
+    </query>
+    <query name="ejercicio1NavegarPropiedadesEnlazadas">
+        <![CDATA[SELECT p.nombre.ape1,p.direccion.municipio.nombre FROM Profesor p WHERE p.id IN (1,2,3)]]>
+    </query>
+    <query name="ejercicio1SizeColecciones">
+        <![CDATA[SELECT p.nombre.ape1,SIZE(p.correos) FROM Profesor p WHERE p.id IN (1,2,3) Group by p.nombre.ape1]]>
+    </query>
+    <query name="ejercicio1EmptyColecciones">
+        <![CDATA[SELECT p.nombre FROM Profesor p WHERE p.correos IS EMPTY]]>
+    </query>
+    <query name="ejercicio2.4">
+        <![CDATA[SELECT SIZE(p.correos) FROM Profesor p WHERE p.id= :id]]>
+    </query>
+    <query name="ejercicio2.5">
+        <![CDATA[SELECT p.nombre.ape1, p.direccion.calle, p.direccion.provincia, p.direccion.municipio.nombre FROM Profesor p WHERE p.id= :id]]>
+    </query>
+</hibernate-mapping>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory name="FactorialHibernate">
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <!-- <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/profesor</property> -->   <!-- EJERCICIOS 1, 2 y 3 -->
+        <!-- <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/profesorfk4</property> -->       <!-- EJERCICIOS 4, 5 y 7 -->
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/profesorfk5</property>       <!-- EJERCICIOS 6 y 8 -->
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        
+        <!-- MAPEOS DE LECTURA -->
+        
+        <!-- <mapping resource="Profesor.hbm.xml"/>
+        <mapping resource="Direccion.hbm.xml"/>
+        <mapping resource="Modulo.hbm.xml"/>
+        <mapping resource="Correo.hbm.xml"/> -->
+        
+        
+        <mapping class="com.hibernate.modelo.Profesor"/>
+        <mapping class="com.hibernate.modelo.Direccion"/>
+        <mapping class="com.hibernate.modelo.Modulo"/>    <!-- A PARTIR DE EJERCICIO 4 -->
+        <mapping class="com.hibernate.modelo.Correo"/>    <!-- EJERCICIOS 5 y 6 -->
+    </session-factory>
+</hibernate-configuration>
